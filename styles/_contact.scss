@@ -1,0 +1,79 @@
+@use "_variables" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: $primary-font;
+}
+
+h2,
+h3 {
+  padding: $padding-h2;
+  font-family: $heading-font;
+}
+
+.contact-2 {
+  margin-top: $margin;
+}
+
+icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.social-links {
+  color: $secondary-color;
+
+  a {
+    color: $secondary-color;
+    text-decoration: none;
+    padding: 0.3rem;
+  }
+
+  a::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f061";
+    margin: 0.3rem;
+  }
+}
+
+.contact-social {
+  margin-bottom: $margin;
+}
+
+form {
+  max-width: 30rem;
+  border: $secondary-color 1.5px dotted;
+  background-color: none;
+}
+
+.container {
+  padding: 10px;
+}
+
+input[type="text"],
+input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: $secondary-color;
+  color: $neutral-color-light;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
+}

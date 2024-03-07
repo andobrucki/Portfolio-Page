@@ -1,0 +1,44 @@
+@use "_variables" as *;
+@use "_placeholder" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: $primary-font;
+}
+
+.project {
+  h2,
+  h3 {
+    padding: $padding-h2;
+    font-family: $heading-font;
+  }
+
+  .project-page-main {
+    margin-top: $margin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    figure {
+      width: 80%;
+      padding-bottom: 1rem;
+      img {
+        width: 100%;
+      }
+    }
+    a {
+      @extend %linkStyle;
+    }
+  }
+}
+
+// MEDIA QUERY 800PX
+@media screen and (max-width: 800px) {
+  .project-page-main {
+    flex-direction: column;
+  }
+}
