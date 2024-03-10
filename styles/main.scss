@@ -1,6 +1,5 @@
 @use "_variables" as *;
 @use "_placeholder" as *;
-
 @use "_header" as *;
 @use "_footer" as *;
 @use "_about" as *;
@@ -16,7 +15,6 @@
 
 :root {
   font-family: $primary-font;
-  
 }
 
 body {
@@ -63,7 +61,6 @@ main {
   height: 75%;
   object-fit: cover;
 }
-
 
 //MEDIA QUERY MIN Width 800PX////
 
@@ -127,7 +124,7 @@ main {
     grid-column-start: 2;
     margin-left: 1rem;
   }
-  
+
   .overlay {
     position: absolute;
     top: 0;
@@ -146,7 +143,6 @@ main {
 
   .hero-works__container:hover .overlay {
     opacity: 1;
-    box-shadow: 5px 5px -5px -5px orange;
   }
 
   .overlay-text {

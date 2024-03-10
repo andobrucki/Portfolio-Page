@@ -1,14 +1,5 @@
 @use "_variables" as *;
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  font-family: $primary-font;
-}
+@use "_placeholder" as *;
 
 h2,
 h3 {
@@ -20,7 +11,7 @@ h3 {
   margin-top: $margin;
 }
 
-icon::before {
+icon::after {
   display: inline-block;
   font-style: normal;
   font-variant: normal;
@@ -29,12 +20,14 @@ icon::before {
 }
 
 .social-links {
-  color: $secondary-color;
-
   a {
     color: $secondary-color;
     text-decoration: none;
     padding: 0.3rem;
+
+    &:hover {
+      color: $accent-color;
+    }
   }
 
   a::after {
@@ -62,10 +55,9 @@ form {
 input[type="text"],
 input[type="submit"] {
   width: 100%;
-  padding: 12px;
-  margin: 8px 0;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
   display: inline-block;
-  box-sizing: border-box;
 }
 
 input[type="submit"] {
@@ -74,6 +66,6 @@ input[type="submit"] {
   border: none;
 }
 
-input[type="submit"]:hover {
-  opacity: 0.8;
+input[type="text"]:focus {
+  outline-color: $accent-color;
 }

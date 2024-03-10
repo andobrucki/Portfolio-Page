@@ -2,40 +2,32 @@
 @use "_placeholder" as *;
 
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  :root {
-    font-family: $primary-font;
-  }
-  
-
-.main__about h2 {
+.main__about {
+  h2 {
     padding: $padding-h2;
   }
-  
-  .main__about img {
-    width: 20rem;
+
+  img {
+    width: 25rem;
+    margin-top: $margin;
   }
-  
-  @media screen and (min-width: 800px) {
-    .main__about {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: 50% 50%;
-      grid-template-rows: repeat(10, 100px);
-  
-      p {
-        grid-column: 1 / 2;
-      }
-  
-      img {
-        grid-column: 2 / 3;
-        grid-row-start: 3;
-        justify-self: center;
-      }
+}
+
+@media screen and (min-width: 800px) {
+  .main__about {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(10, 100px);
+
+    p {
+      grid-column: 1 / 2;
+    }
+
+    img {
+      grid-column: 2 / 3;
+      grid-row-start: 4;
+      justify-self: center;
     }
   }
+}

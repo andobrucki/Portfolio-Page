@@ -1,40 +1,6 @@
 @use "_variables" as *;
 @use "_placeholder" as *;
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-:root {
-  font-family: $primary-font;
-}
-
-// Header Style
-
-// header {
-//   width: 100%;
-//   padding: 0.5rem;
-//   margin: 0 auto;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   height: 5rem;
-//   position: fixed;
-//   top: 0;
-//   z-index: 1000;
-
-//   .header__logo a {
-//     font-family: $heading-font;
-//     color: $neutral-color-dark;
-//     text-decoration: none;
-//   }
-
-//   .header__link-about a {
-//     @extend %linkStyle;
-//   }
-// }
 
 .header__logo a {
   position: fixed;
@@ -56,6 +22,7 @@ header {
   display: flex;
   align-items: center;
 }
+
 .header__link-about a {
   position: fixed;
   top: 10px;
@@ -63,6 +30,7 @@ header {
   @extend %linkStyle;
 }
 
+//linear gradient on header and footer//
 header:before {
   content: "";
   display: block;
@@ -79,12 +47,13 @@ header:before {
     from(black),
     to(rgba(0, 0, 0, 0))
   );
-  background: linear-gradient(to bottom, black, rgba(0, 0, 0, 0));
+  background: linear-gradient(to bottom, $secondary-color, rgba(0, 0, 0, 0));
   -webkit-transition: opacity 0.6s ease-in-out;
   transition: opacity 0.6s ease-in-out;
   pointer-events: none;
 }
 
+//Hamburger Menu//
 .hamburger-menu {
   display: flex;
   flex-direction: column;
@@ -95,10 +64,7 @@ header:before {
   left: $hamburger-margin;
   z-index: 2;
   cursor: pointer;
-}
-
-.hamburger-menu:has(input:checked) {
-  color: white;
+  margin-top: 1rem;
 }
 
 .hamburger-menu::before,
@@ -107,12 +73,12 @@ header:before {
   content: "";
   width: $bar-width;
   height: $bar-height;
-  background-color: black;
+  background-color: $neutral-color-dark;
   border-radius: 1000px;
   transform-origin: left center;
-  // transition: opacity $animation-timing width $animation-timing, rotate $animation-timing; translate: $animation-timing;
 }
 
+//checkbox//
 .hamburger-menu input {
   appearance: none;
   padding: 0;
@@ -121,7 +87,9 @@ header:before {
   pointer-events: none;
 }
 
+//animation for crossing lines //
 .hamburger-menu:has(input:checked)::before {
+  //if hamburger menu has a checked input field then select before element//
   rotate: 45deg;
   width: $x-width;
   translate: 0 calc($bar-height / -2);
@@ -144,8 +112,8 @@ header:before {
   padding: 0.5rem 1rem;
   padding-top: calc($hamburger-height + $hamburger-margin + 1rem);
   background-color: $contrast-color;
-  max-width: 20rem;
-  min-height: 100vh;
+  width: 100vw;
+  min-height: 15vh;
 
   nav {
     display: flex;
@@ -154,7 +122,7 @@ header:before {
     a {
       color: $primary-color;
       text-decoration: none;
-      margin-top: 2rem;
+      margin: $margin;
 
       &:hover {
         color: $accent-color;
@@ -167,7 +135,7 @@ header:before {
   translate: 0;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
   .hamburger-menu,
   .hamburger-menu::after,
   .hamburger-menu::before,
@@ -176,7 +144,7 @@ header:before {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 799px) {
   .header__link-about a {
     display: none;
   }
