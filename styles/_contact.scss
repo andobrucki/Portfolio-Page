@@ -43,6 +43,7 @@ icon::after {
 }
 
 form {
+  margin-top: 3rem;
   max-width: 30rem;
   border: $secondary-color 1.5px dotted;
   background-color: none;
@@ -64,6 +65,11 @@ input[type="submit"] {
   background-color: $secondary-color;
   color: $neutral-color-light;
   border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $accent-color;
+  }
 }
 
 input[type="text"]:focus {

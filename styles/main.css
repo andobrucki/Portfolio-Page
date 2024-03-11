@@ -258,6 +258,7 @@ icon::after {
 }
 
 form {
+  margin-top: 3rem;
   max-width: 30rem;
   border: #32213a 1.5px dotted;
   background-color: none;
@@ -279,6 +280,10 @@ input[type=submit] {
   background-color: #32213a;
   color: #f5f5f5;
   border: none;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  color: #ff8345;
 }
 
 input[type=text]:focus {
